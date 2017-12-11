@@ -57,10 +57,16 @@ for n in range(15):
 
 dense_hash.append(reduce(xor, sparse_hash[-16:]))
 
-hashcode = ''.join([hex(digit)[-2:] for digit in dense_hash])
-print len(hashcode)
+
+def to_hex(digit):
+    h = hex(digit).split('x')
+    if digit <= 15:
+        return '0'+ h[-1]
+    else:
+        return h[-1]
+
+hashcode = ''.join([to_hex(digit) for digit in dense_hash])
 print hashcode
 
-print reduce(xor, [65,27,9,1,4,3,40,50,91,7,6,0,2,5,68,22])
 
 
