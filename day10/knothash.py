@@ -30,7 +30,6 @@ def knothash(length, numbers, current_position, skip_size):
 
     return numbers, current_position, skip_size
 
-
 num, pos, skip = knothash(lengths, numbers, current_position, skip_size)
 print num[0]*num[1]
 
